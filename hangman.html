@@ -27,7 +27,7 @@
 			var answerArray = [];
 			for (var i = 0; i < length; i++) {
 				answerArray[i] = "_";
-    		}
+			}
 			return answerArray;
 		}
 
@@ -42,12 +42,12 @@
 		var updateGameState = function (guess, word, answerArray) {
 			// Обновляет answerArray согласно ответу игрока (guess)
 			// возвращает число, обозначающее, сколько раз буква guess встречается в слове, чтобы можно было обновить значение remainingLetters
-				var correctLetters = 0;
-				for (var j = 0; j < word.length; j++) {
-					if (word[j] === guess) {
-						if (answerArray[j] === guess) {
-							alert("This letter has already been guessed.");
-							return 0;
+			var correctLetters = 0;
+			for (var j = 0; j < word.length; j++) {
+				if (word[j] === guess) {
+					if (answerArray[j] === guess) {
+						alert("This letter has already been guessed.");
+						return 0;
 							//выходит сразу из всей функции naXren - return 0
 						} else {
 							answerArray[j] = guess;
@@ -56,15 +56,15 @@
 					}
 				}
 				return correctLetters;
-		}
-		var congratulatePlayer = function (resultIsGood, word) {
-			if (resultIsGood) {
-				alert("Отлично! Было загадано слово " + word);
-			} else {
-				alert("Эххх, ты!!! Было загадано слово " + word);
 			}
-		}
-		var checkResult = function (answer) {
+			var congratulatePlayer = function (resultIsGood, word) {
+				if (resultIsGood) {
+					alert("Отлично! Было загадано слово " + word);
+				} else {
+					alert("Эххх, ты!!! Было загадано слово " + word);
+				}
+			}
+			var checkResult = function (answer) {
 			// С помощью alert показывает игроку отгаданное слово и поздравляет его с победой
 			//Отображаем ответ и поздравляем игрока, если он отгадал
 			var resultIsGood = true;
@@ -77,7 +77,7 @@
 			return resultIsGood;
 		}
 		var isAlpha = function(ch){
- 			return /^[А-Я]$/i.test(ch);
+			return /^[А-Я]$/i.test(ch);
 		}
 
 		do {
@@ -85,7 +85,7 @@
 			//работаем с функциями
 			//word: загаданное слово. Его надо определить другой переменной, которая будет функцией
 			var word = pickElement (pickElement(all_variants));		
-		
+			
 		//Создаем итоговый массив - answerArray
 
 
@@ -127,11 +127,11 @@
 			}
 		}
 		congratulatePlayer(checkResult(answerArray), word);
-				
+		
 		//Конец игрового цикла
 	} while (confirm("Do you wanna play again?"))
-		
+	
 
-	</script>
+</script>
 </body>
 </html>
